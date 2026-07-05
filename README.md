@@ -102,6 +102,255 @@ The region contains extensive underground and opencast coal mining operations, m
 - NumPy
 - Pandas
 - Jupyter Notebook
-- Remote Sensing
-- GIS
+
+---
+
+# Project Structure
+
+```
+METHANE-HOTSPOT-MAPPER
+│
+├── Damodar_Valley_Methane_Hotspot_Detection.ipynb
+├── Methane_Hotspot_Mapper.py
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── BASELINE_MAP.html
+├── PERSISTENT_HOTSPOT_MAP.html
+├── 01_STUDY_AREA.png
+├── 02_HISTORICAL_MEAN_METHANE_CONCENTRATION.png
+├── 03_HISTORICAL_METHANE_VARIABILITY.png
+├── 04_MONTHLY_METHANE_ANOMALY.png
+├── 05_MONTHLY_METHANE_ZSCORE.png
+├── 06_MONTHLY_METHANE_HOTSPOTS.png
+├── 07_PERSISTENT_HOTSPOT_FREQUENCY.png
+├── 08_HOTSPOT_CENTROIDS.png
+├── 09_INTERACTIVE_BASELINE_MAP.png
+└── 10_INTERACTIVE_PERSISTENT_HOTSPOT_MAP.png
+```
+
+---
+
+# Results
+
+The workflow successfully identified statistically significant methane enhancement zones across the Damodar Valley Coal Belt using Sentinel-5P TROPOMI observations.
+
+Major outputs generated include:
+
+- Historical methane baseline map
+- Historical methane variability map
+- Monthly methane anomaly map
+- Monthly methane Z-score map
+- Monthly methane hotspot map
+- Persistent hotspot frequency map
+- Hotspot centroid extraction
+- Interactive HTML maps for visualization
+
+---
+
+# Workflow
+
+```text
+Sentinel-5P TROPOMI
+        │
+        ▼
+Google Earth Engine
+        │
+        ▼
+Area of Interest Selection
+        │
+        ▼
+Historical Baseline Calculation
+        │
+        ▼
+Historical Standard Deviation
+        │
+        ▼
+Monthly Methane Composite
+        │
+        ▼
+Methane Anomaly Calculation
+        │
+        ▼
+Z-Score Analysis
+        │
+        ▼
+Hotspot Detection
+        │
+        ▼
+Persistent Hotspot Frequency
+        │
+        ▼
+Hotspot Centroid Extraction
+        │
+        ▼
+Interactive HTML Maps
+```
+
+---
+
+# Figures
+
+## FIGURE 1. STUDY AREA
+
+![](01_STUDY_AREA.png)
+
+---
+
+## FIGURE 2. HISTORICAL MEAN METHANE CONCENTRATION
+
+![](02_HISTORICAL_MEAN_METHANE_CONCENTRATION.png)
+
+---
+
+## FIGURE 3. HISTORICAL METHANE VARIABILITY
+
+![](03_HISTORICAL_METHANE_VARIABILITY.png)
+
+---
+
+## FIGURE 4. MONTHLY METHANE ANOMALY
+
+![](04_MONTHLY_METHANE_ANOMALY.png)
+
+---
+
+## FIGURE 5. MONTHLY METHANE Z-SCORE
+
+![](05_MONTHLY_METHANE_ZSCORE.png)
+
+---
+
+## FIGURE 6. MONTHLY METHANE HOTSPOTS
+
+![](06_MONTHLY_METHANE_HOTSPOTS.png)
+
+---
+
+## FIGURE 7. PERSISTENT HOTSPOT FREQUENCY
+
+![](07_PERSISTENT_HOTSPOT_FREQUENCY.png)
+
+---
+
+## FIGURE 8. HOTSPOT CENTROIDS
+
+![](08_HOTSPOT_CENTROIDS.png)
+
+---
+
+## FIGURE 9. INTERACTIVE BASELINE MAP
+
+![](09_INTERACTIVE_BASELINE_MAP.png)
+
+---
+
+## FIGURE 10. INTERACTIVE PERSISTENT HOTSPOT MAP
+
+![](10_INTERACTIVE_PERSISTENT_HOTSPOT_MAP.png)
+
+---
+
+# Interactive Maps
+
+This repository contains two interactive HTML maps generated using Google Earth Engine and Geemap.
+
+### BASELINE MAP
+
+**File:** `BASELINE_MAP.html`
+
+Displays:
+
+- Historical methane concentration
+- Persistent hotspot polygons
+- Study area boundary
+- Interactive layer control
+
+---
+
+### PERSISTENT HOTSPOT MAP
+
+**File:** `PERSISTENT_HOTSPOT_MAP.html`
+
+Displays:
+
+- Persistent hotspot frequency
+- Hotspot centroids
+- Interactive GIS visualization
+- Layer control
+
+---
+
+# Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/dibyajotidas611/METHANE-HOTSPOT-MAPPER.git
+```
+
+Install the required Python packages:
+
+```bash
+pip install earthengine-api geemap pandas numpy matplotlib
+```
+
+Authenticate Google Earth Engine:
+
+```python
+import ee
+
+ee.Authenticate()
+ee.Initialize(project="methane-hotspot-detection")
+```
+
+Run either:
+
+- `Damodar_Valley_Methane_Hotspot_Detection.ipynb`
+- `Methane_Hotspot_Mapper.py`
+
+---
+
+# Applications
+
+This workflow can be applied to:
+
+- Methane emission monitoring
+- Coal mining environmental assessment
+- Greenhouse gas surveillance
+- Climate change studies
+- Satellite-based environmental monitoring
+- Remote sensing research
+- GIS-based spatial analysis
+- Earth observation projects
+
+---
+
+# Future Improvements
+
+- Near real-time methane monitoring
+- Machine learning-based hotspot classification
+- Automated emission alert system
+- WebGIS dashboard development
+- Integration with Sentinel-2 imagery
+- Quantitative methane emission estimation
+
+---
+
+# Author
+
+## Dibya Jyoti Das
+
+Master's in Applied Geology
+
+Remote Sensing • GIS • Google Earth Engine • Python
+
+If you found this project useful, consider giving this repository a ⭐.
+
+---
+
+# License
+
+This project is released under the MIT License.
+
 
