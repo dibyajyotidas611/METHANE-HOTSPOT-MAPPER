@@ -2,67 +2,74 @@
 
 A cloud-based remote sensing workflow for detecting persistent atmospheric methane hotspots over the Damodar Valley Coal Belt using Sentinel-5P TROPOMI observations, Google Earth Engine, Geemap and Python.
 
-The project combines historical baseline modelling, statistical anomaly detection, z-score analysis, hotspot persistence mapping and interactive geospatial visualization to identify recurring methane enhancement zones associated with one of India's largest coal mining regions.
+The project combines historical baseline modelling, statistical anomaly detection, Z-score analysis, hotspot persistence mapping and interactive geospatial visualization to identify recurring methane enhancement zones associated with one of India's largest coal mining regions.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-
 ![Google Earth Engine](https://img.shields.io/badge/Google-Earth%20Engine-green)
-
 ![Sentinel-5P](https://img.shields.io/badge/Sentinel--5P-TROPOMI-orange)
-
 ![Geemap](https://img.shields.io/badge/Geemap-Interactive%20Maps-success)
-
 ![Remote Sensing](https://img.shields.io/badge/Remote-Sensing-red)
-
 ![GIS](https://img.shields.io/badge/GIS-Spatial%20Analysis-yellowgreen)
 
-------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Table of Contents
 
 - Project Overview
+- Key Features
 - Objectives
 - Study Area
 - Dataset
-- Methodology
-- Workflow
-- Results
-- Figures
-- Interactive Maps
-- Repository Structure
-- Installation
 - Technologies Used
+- Project Structure
+- Results
+- Workflow
+- Figures
+- Interactive Map
+- Installation
+- Applications
 - Future Improvements
 - Author
+- License
 
 # Project Overview
 
-Methane (CH₄) is one of the most significant greenhouse gases contributing to climate change. Detecting persistent methane emissions from industrial regions is essential for environmental monitoring and mitigation.
+Methane (CH₄) is one of the most significant greenhouse gases contributing to climate change. This project develops a cloud-based workflow using Sentinel-5P TROPOMI observations and Google Earth Engine to identify statistically significant methane anomalies across the Damodar Valley Coal Belt. Historical methane observations are used to establish a baseline, monthly anomalies are converted to Z-scores, and persistent hotspot regions are extracted for interactive visualization and GIS analysis.
 
-This project develops an automated cloud-based workflow using Sentinel-5P TROPOMI satellite observations and Google Earth Engine to identify statistically significant methane anomalies over the Damodar Valley Coal Belt, India.
+---
 
-Historical methane observations are used to establish a baseline against which monthly methane concentrations are compared using z-score analysis. Persistent hotspots are identified by analysing the temporal frequency of methane anomalies and exported as GIS-ready datasets for further investigation.
+# Key Features
+
+- Google Earth Engine cloud processing
+- Sentinel-5P TROPOMI methane observations
+- Historical methane baseline modelling
+- Monthly anomaly detection
+- Z-score based hotspot detection
+- Persistent hotspot frequency analysis
+- Vector polygon extraction
+- Hotspot centroid extraction
+- Interactive web map
+- Python + Geemap implementation
 
 ---
 
 # Objectives
 
-- Detect atmospheric methane anomalies over the Damodar Valley Coal Belt using Sentinel-5P TROPOMI observations.
-- Develop a historical methane baseline (2019–2024).
-- Calculate methane anomalies relative to the historical baseline.
-- Compute standardized methane anomaly (Z-score).
-- Detect statistically significant methane hotspot pixels.
-- Identify persistent methane hotspots through temporal frequency analysis.
-- Visualize methane distributions using interactive Google Earth Engine maps.
-- Export hotspot locations for further GIS analysis.
+- Detect atmospheric methane anomalies.
+- Develop a historical methane baseline.
+- Calculate methane anomalies and Z-scores.
+- Detect statistically significant hotspot pixels.
+- Identify persistent methane hotspots.
+- Export hotspot polygons and centroids.
+- Build an interactive web map.
 
 ---
 
 # Study Area
 
-The study focuses on the **Damodar Valley Coal Belt**, one of India's largest coal-producing regions extending across **Jharkhand** and **West Bengal**.
+The study focuses on the **Damodar Valley Coal Belt**, extending across **Jharkhand** and **West Bengal**.
 
-Major mining districts include:
+Major districts:
 
 - Dhanbad
 - Bokaro
@@ -70,14 +77,10 @@ Major mining districts include:
 - Asansol
 - Raniganj
 
-The region contains extensive underground and opencast coal mining operations, making it an important area for monitoring methane emissions associated with coal extraction.
-
-**Approximate Bounding Box**
-
 | Longitude | Latitude |
 |-----------|----------|
-| 84.0° E | 23.0° N |
-| 88.5° E | 24.8° N |
+|84.0° E|23.0° N|
+|88.5° E|24.8° N|
 
 ---
 
@@ -107,7 +110,7 @@ The region contains extensive underground and opencast coal mining operations, m
 
 # Project Structure
 
-```
+```text
 METHANE-HOTSPOT-MAPPER
 │
 ├── Damodar_Valley_Methane_Hotspot_Detection.ipynb
@@ -115,8 +118,7 @@ METHANE-HOTSPOT-MAPPER
 ├── README.md
 ├── requirements.txt
 ├── LICENSE
-├── BASELINE_MAP.html
-├── PERSISTENT_HOTSPOT_MAP.html
+├── METHANE_HOTSPOT_MAPPER.html
 ├── 01_STUDY_AREA.png
 ├── 02_HISTORICAL_MEAN_METHANE_CONCENTRATION.png
 ├── 03_HISTORICAL_METHANE_VARIABILITY.png
@@ -133,18 +135,17 @@ METHANE-HOTSPOT-MAPPER
 
 # Results
 
-The workflow successfully identified statistically significant methane enhancement zones across the Damodar Valley Coal Belt using Sentinel-5P TROPOMI observations.
+Major outputs include:
 
-Major outputs generated include:
-
-- Historical methane baseline map
-- Historical methane variability map
-- Monthly methane anomaly map
-- Monthly methane Z-score map
-- Monthly methane hotspot map
-- Persistent hotspot frequency map
+- Historical methane baseline
+- Historical methane variability
+- Monthly methane anomaly
+- Monthly methane Z-score
+- Monthly hotspot detection
+- Persistent hotspot frequency
+- Persistent hotspot polygons
 - Hotspot centroid extraction
-- Interactive HTML maps for visualization
+- Interactive HTML map integrating all analysis layers
 
 ---
 
@@ -160,16 +161,16 @@ Google Earth Engine
 Area of Interest Selection
         │
         ▼
-Historical Baseline Calculation
+Historical Baseline
         │
         ▼
 Historical Standard Deviation
         │
         ▼
-Monthly Methane Composite
+Monthly Composite
         │
         ▼
-Methane Anomaly Calculation
+Methane Anomaly
         │
         ▼
 Z-Score Analysis
@@ -178,13 +179,16 @@ Z-Score Analysis
 Hotspot Detection
         │
         ▼
-Persistent Hotspot Frequency
+Persistence Analysis
         │
         ▼
-Hotspot Centroid Extraction
+Vector Extraction
         │
         ▼
-Interactive HTML Maps
+Hotspot Centroids
+        │
+        ▼
+Interactive HTML Map
 ```
 
 ---
@@ -195,55 +199,37 @@ Interactive HTML Maps
 
 ![](01_STUDY_AREA.png)
 
----
-
 ## FIGURE 2. HISTORICAL MEAN METHANE CONCENTRATION
 
 ![](02_HISTORICAL_MEAN_METHANE_CONCENTRATION.png)
-
----
 
 ## FIGURE 3. HISTORICAL METHANE VARIABILITY
 
 ![](03_HISTORICAL_METHANE_VARIABILITY.png)
 
----
-
 ## FIGURE 4. MONTHLY METHANE ANOMALY
 
 ![](04_MONTHLY_METHANE_ANOMALY.png)
-
----
 
 ## FIGURE 5. MONTHLY METHANE Z-SCORE
 
 ![](05_MONTHLY_METHANE_ZSCORE.png)
 
----
-
 ## FIGURE 6. MONTHLY METHANE HOTSPOTS
 
 ![](06_MONTHLY_METHANE_HOTSPOTS.png)
-
----
 
 ## FIGURE 7. PERSISTENT HOTSPOT FREQUENCY
 
 ![](07_PERSISTENT_HOTSPOT_FREQUENCY.png)
 
----
-
 ## FIGURE 8. HOTSPOT CENTROIDS
 
 ![](08_HOTSPOT_CENTROIDS.png)
 
----
-
 ## FIGURE 9. INTERACTIVE BASELINE MAP
 
 ![](09_INTERACTIVE_BASELINE_MAP.png)
-
----
 
 ## FIGURE 10. INTERACTIVE PERSISTENT HOTSPOT MAP
 
@@ -251,89 +237,75 @@ Interactive HTML Maps
 
 ---
 
-# Interactive Maps
+# Interactive Map
 
-This repository contains two interactive HTML maps generated using Google Earth Engine and Geemap.
+The repository includes a single interactive HTML map:
 
-### BASELINE MAP
+**`METHANE_HOTSPOT_MAPPER.html`**
 
-**File:** `BASELINE_MAP.html`
+Layers included:
 
-Displays:
+- Study Area
+- Historical Mean Methane
+- Historical Methane Variability
+- Monthly Methane Anomaly
+- Monthly Methane Z-Score
+- Monthly Methane Hotspots
+- Persistent Hotspot Frequency
+- Persistent Hotspot Polygons
+- Hotspot Centroids
 
-- Historical methane concentration
-- Persistent hotspot polygons
-- Study area boundary
-- Interactive layer control
-
----
-
-### PERSISTENT HOTSPOT MAP
-
-**File:** `PERSISTENT_HOTSPOT_MAP.html`
-
-Displays:
-
-- Persistent hotspot frequency
-- Hotspot centroids
-- Interactive GIS visualization
-- Layer control
+Open the HTML file in any modern web browser to explore the interactive map.
 
 ---
 
 # Installation
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/dibyajotidas611/METHANE-HOTSPOT-MAPPER.git
 ```
-
-Install the required Python packages:
 
 ```bash
 pip install earthengine-api geemap pandas numpy matplotlib
 ```
 
-Authenticate Google Earth Engine:
-
 ```python
 import ee
-
 ee.Authenticate()
 ee.Initialize(project="methane-hotspot-detection")
 ```
 
-Run either:
+Run:
 
 - `Damodar_Valley_Methane_Hotspot_Detection.ipynb`
 - `Methane_Hotspot_Mapper.py`
+
+Interactive visualization:
+
+- `METHANE_HOTSPOT_MAPPER.html`
 
 ---
 
 # Applications
 
-This workflow can be applied to:
-
 - Methane emission monitoring
 - Coal mining environmental assessment
 - Greenhouse gas surveillance
 - Climate change studies
-- Satellite-based environmental monitoring
 - Remote sensing research
 - GIS-based spatial analysis
-- Earth observation projects
+- Earth observation
 
 ---
 
 # Future Improvements
 
 - Near real-time methane monitoring
-- Machine learning-based hotspot classification
-- Automated emission alert system
-- WebGIS dashboard development
-- Integration with Sentinel-2 imagery
-- Quantitative methane emission estimation
+- Machine learning hotspot classification
+- WebGIS dashboard
+- Sentinel-2 integration
+- Automated reporting
+- Emission estimation
 
 ---
 
@@ -352,5 +324,3 @@ If you found this project useful, consider giving this repository a ⭐.
 # License
 
 This project is released under the MIT License.
-
-
